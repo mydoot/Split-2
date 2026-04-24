@@ -23,9 +23,8 @@ using UnityEngine.SceneManagement;
         {
             randomCard
         };
-        Debug.Log(cards.Count);
-        cardZone.AddGroup(cards);
-        cardZone.RefreshCardZone();
+            cardZone.AddGroup(cards);
+            cardZone.RefreshCardZone();
         }
 
 
