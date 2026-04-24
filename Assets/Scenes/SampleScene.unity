@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 69123991}
   - component: {fileID: 69123990}
   m_Layer: 0
-  m_Name: ClockFinishSound
+  m_Name: ClockFinishAsset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 455827964}
   - component: {fileID: 455827963}
   m_Layer: 0
-  m_Name: ClockTickSound
+  m_Name: ClockTickAsset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +617,6 @@ GameObject:
   - component: {fileID: 580974510}
   - component: {fileID: 580974509}
   - component: {fileID: 580974508}
-  - component: {fileID: 580974512}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -707,19 +706,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &580974512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580974507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe6af139488c91d4da6ae00a2345c178, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ConveyorAudio
-  conveyorSound: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1051,7 @@ GameObject:
   - component: {fileID: 1717775260}
   - component: {fileID: 1717775259}
   - component: {fileID: 1717775258}
+  - component: {fileID: 1717775261}
   m_Layer: 0
   m_Name: ConveyorBeltArt1 1_0
   m_TagString: Untagged
@@ -1168,6 +1155,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1717775261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717775257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6af139488c91d4da6ae00a2345c178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConveyorAudio
+  conveyorSound: {fileID: 2101069850}
 --- !u!1 &2002399494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1349,7 @@ GameObject:
   - component: {fileID: 2101069851}
   - component: {fileID: 2101069850}
   m_Layer: 0
-  m_Name: ConveyorBeltSound
+  m_Name: ConveyorBeltAsset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1368,7 +1368,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 48da5a686e790ae46949c098e283bc95, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.375
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1467,6 +1467,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4937864501192879989
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 182191169446357409, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_Name
+      value: SolitiareCardZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7968
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.9332
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: cardGroupPrefab
+      value: 
+      objectReference: {fileID: 6608077007195453498, guid: 6bac32d645a88f44e99665a9db4a3660, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+--- !u!114 &4937864501192879990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+  m_PrefabInstance: {fileID: 4937864501192879989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f226a509999c5e42a0c7d459f7a0aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SolitaireCardZone
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1479,7 +1551,8 @@ SceneRoots:
   - {fileID: 580974511}
   - {fileID: 2043740792}
   - {fileID: 1273572845}
+  - {fileID: 4937864501192879989}
+  - {fileID: 1442540817}
   - {fileID: 455827964}
   - {fileID: 69123991}
-=======
   - {fileID: 2101069851}
