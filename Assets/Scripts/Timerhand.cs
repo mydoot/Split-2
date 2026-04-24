@@ -3,7 +3,7 @@ using TMPro;
 
 public class Timerhand : MonoBehaviour
 {
-    public TextMeshProUGUI timerText;
+    public TextMeshPro timerText;
     public float countdownFrom = 300f; // Set your time in seconds
     private float timeRemaining;
     private bool isRunning = true;
