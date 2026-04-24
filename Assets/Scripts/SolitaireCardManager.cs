@@ -15,7 +15,7 @@ using UnityEngine.UI;
             {
                 this.cardImage.sprite = cardModel.image;
             }
-        }
+    }
 
         public override void UpdateSelection(bool isSelected)
         {

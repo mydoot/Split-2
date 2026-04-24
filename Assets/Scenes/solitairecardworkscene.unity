@@ -565,6 +565,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
   timerText: {fileID: 1273572843}
   countdownFrom: 300
+  clockTick: {fileID: 0}
+  clockFinish: {fileID: 0}
 --- !u!114 &1273572843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,7 +1076,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 182191169446357409, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_Name
-      value: SolitiareCardZone
+      value: CardZone
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1120,6 +1122,10 @@ PrefabInstance:
       propertyPath: cardGroupPrefab
       value: 
       objectReference: {fileID: 6608077007195453498, guid: 6bac32d645a88f44e99665a9db4a3660, type: 3}
+    - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: shouldRemoveEmptyGroup
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

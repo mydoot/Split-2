@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1153579886772204185}
   - component: {fileID: 331790711438182607}
   - component: {fileID: 7330363671380446143}
-  - component: {fileID: 1325471978233236215}
+  - component: {fileID: 995854061939624056}
   m_Layer: 5
   m_Name: SolitaireCardGroup
   m_TagString: Untagged
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1325471978233236215
+--- !u!114 &995854061939624056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,9 +112,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6608077007195453498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebda105a44ff51e4a86ffe64856be452, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fa6534928dbb5a429ff60d4f8a9adb2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 6856127442641504459, guid: 53f17a2854c60c7418dc65c624c392d5, type: 3}
-  minSpacing: -30
-  maxSpacing: -20
+  m_EditorClassIdentifier: Assembly-CSharp::SolitaireCardGroup
+  cardPrefab: {fileID: 6856127442641504459, guid: 204e4bcac79170940af8b24c24244a8f, type: 3}
+  minSpacing: -99999
+  maxSpacing: 99999
