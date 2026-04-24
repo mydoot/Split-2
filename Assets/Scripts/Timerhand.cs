@@ -7,10 +7,17 @@ public class Timerhand : MonoBehaviour
     public float countdownFrom = 300f; // Set your time in seconds
     private float timeRemaining;
     private bool isRunning = true;
+    
+    // Audio Stuff
+    [SerializeField] AudioSource clockTick;
+    [SerializeField] AudioSource clockFinish;
 
     void Start()
     {
         timeRemaining = countdownFrom;
+
+        clockTick.loop = true;
+        clockTick.Play();
     }
 
     void Update()
@@ -36,6 +43,12 @@ public class Timerhand : MonoBehaviour
     {
         timerText.text = "0:00";
         Debug.Log("Timer finished!");
+
+        // Stop looping audio and play finishing audio
+        clockTick.loop = false;
+        clockTick.Stop();
+        clockFinish.Play();
+
         // Add whatever you want to happen when time runs out here
     }
 }
