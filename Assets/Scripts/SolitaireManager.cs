@@ -18,11 +18,12 @@ using UnityEngine.SceneManagement;
 
         void Start()
         {
-            SolitaireCardModel randomCard = this.cards[Random.Range(0, this.cards.Length)];
+        SolitaireCardModel randomCard = this.cards[Random.Range(0, this.cards.Length)];
             List<SolitaireCardModel> cards = new()
         {
             randomCard
         };
+        Debug.Log(cards.Count);
         cardZone.AddGroup(cards);
         cardZone.RefreshCardZone();
         }

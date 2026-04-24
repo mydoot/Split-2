@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f226a509999c5e42a0c7d459f7a0aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SolitaireCardZone
-  cardGroupPrefab: {fileID: 5958866934093933401, guid: 4e4a940b9b9250846b2d11fee2c7d5f4, type: 3}
+  cardGroupPrefab: {fileID: 6608077007195453498, guid: 6bac32d645a88f44e99665a9db4a3660, type: 3}
   minSpacing: 100
   maxSpacing: 200
   shouldRemoveEmptyGroup: 0
