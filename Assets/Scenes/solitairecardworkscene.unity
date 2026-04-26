@@ -658,6 +658,14 @@ PrefabInstance:
       value: 0.3207547
       objectReference: {fileID: 0}
     - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: maxSpacing
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: minSpacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: shouldRemoveEmptyGroup
       value: 0
       objectReference: {fileID: 0}
@@ -1535,215 +1543,162 @@ MonoBehaviour:
   - Suit: Club
     Rank: 1
     image: {fileID: -7962958620251760237, guid: 9972aa791c0dbae4ca55a2524b5719dc, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 2
     image: {fileID: -4385027863452513888, guid: ed122d22b98f8ab43bcfb28adbab04be, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
+  - Suit: Club
+    Rank: 12
+    image: {fileID: 8336983934359830965, guid: c0f4569cd9b897747b7eaefc1517291e, type: 3}
   - Suit: Club
     Rank: 3
     image: {fileID: -8966103351282879131, guid: 8a762d084020d4c4b891dcbfec5235d2, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 4
     image: {fileID: 7295437446920297474, guid: f35aebce8a0e9b743aaa30f0fed9600e, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 5
     image: {fileID: 900155881221796658, guid: daaa1d1ac9c79fb48a74ca889ef5dc0b, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 6
     image: {fileID: 5959345540113243077, guid: ab334db3254d2114e81e3a72ed3fb301, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 7
     image: {fileID: 1113572341183285280, guid: 9bed7cf61d7469f40a4ee2a96d240150, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 8
     image: {fileID: 1631528807267942726, guid: 452f0325d99409446b6f75712e20b857, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 9
     image: {fileID: -8812425423635397545, guid: 9ff312e6b072bbe42a64e309d8709d03, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 10
     image: {fileID: 4824820156778621499, guid: a0b6b94b229891e4e97482fe94f07fe2, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 11
     image: {fileID: -4646562824223016318, guid: 17cef17391fd6bb4bbece81fbebc5a1d, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 12
     image: {fileID: -1362576784512406881, guid: fd2d2efdcb1761e4798fe4181dd17851, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Club
     Rank: 13
     image: {fileID: 8336983934359830965, guid: c0f4569cd9b897747b7eaefc1517291e, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 1
     image: {fileID: 5115689857591022293, guid: e8e4d4bd8aaf46b429d20ad3380f6344, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 2
     image: {fileID: -5911995926141740130, guid: 6522f636e417cba4a9acce98dee4b1ee, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 3
     image: {fileID: 1475989905638025663, guid: f3d3c9f27c2a06a4daa90dfcf1c6c08d, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 4
     image: {fileID: -6040472651139316942, guid: f53ac3541484b0c4da97e962e0a6c800, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 5
     image: {fileID: 6537071568548265073, guid: bdb023d0501ee6c41ab9a4e60c54ec0c, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 6
     image: {fileID: -8362997664096866070, guid: a95d267f2aa943940b13c8bb5abf5242, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 7
     image: {fileID: 2516651681487882310, guid: b337c7ce75923eb4faa42361b77dbdf3, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 8
     image: {fileID: 3650373935745423769, guid: e0fbd46a76f1f474c9c7785829955562, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 9
     image: {fileID: -3200901572440252597, guid: bde9a7b33bd212f4da0aafc5ee3094ba, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 10
     image: {fileID: -7142551996904671034, guid: 97e48fe073ad6044a8c68c12da3394c7, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 11
     image: {fileID: -1319678240526198345, guid: ba36406edf3a8344ab95e59a165deab1, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 12
     image: {fileID: 2409559460663318037, guid: 1c134bade7ccc8744bb1a4108ea8d981, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 13
-    image: {fileID: -3060795020005784151, guid: 75e9d84468d67f84486b209ee2050ca1, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
+    image: {fileID: -1319678240526198345, guid: ba36406edf3a8344ab95e59a165deab1, type: 3}
   - Suit: Diamonds
     Rank: 1
     image: {fileID: 5213756227870585571, guid: 40af55b613dea2a4bac9a7c41b3fa6d1, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 2
     image: {fileID: -1216041702782517034, guid: 57c89e431dc6c1b4486b8f8c17baf0a7, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 3
     image: {fileID: -5309369960160844828, guid: 6a21c62b74d89d44790b5307c9b28640, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 4
     image: {fileID: -4615974359361579544, guid: 14bc645b9b4d98345a2be315ee9f4c2f, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 5
     image: {fileID: -361032479974846922, guid: c7d929be5aee7004e96b766a6290da83, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 6
     image: {fileID: 6128587682147097611, guid: 03cd3199722043440a58b3c5eec7b04b, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 7
     image: {fileID: 636565181274389993, guid: 2e56742fddb112f47902c0b20b69677b, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 8
     image: {fileID: 5681394788092356164, guid: 682d100a44c9b1546aa14920f53eabb0, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 9
     image: {fileID: 6281945903854009965, guid: e05cf98d296f20949be679b27e71bcf8, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 10
     image: {fileID: -7392249699379723169, guid: f235fc4b0aab4b642a6079444ba59186, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 11
     image: {fileID: -2746133804507600654, guid: 8d6ae3c8e00287f42937e17688382492, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 12
     image: {fileID: 7815432083257719999, guid: 59fb6058e45cef3409638103108cb221, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 13
     image: {fileID: 3581214618923926870, guid: 2e026c3c3b494144689068a14894d0af, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 1
     image: {fileID: -4397146893133638957, guid: b839f29c375661043965b5c254f045c5, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 2
     image: {fileID: 4222903827901398547, guid: b205c9d43749486448bb239e3eb9598c, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 3
     image: {fileID: -6270570363331100905, guid: 67f90e2794855d54d9cfde132f93c1d0, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 4
     image: {fileID: -1557358881603713595, guid: 85cf9078f0809ec488995d159c7dd950, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 5
     image: {fileID: 3966036564096180646, guid: 5196241b1f9e7c749b274b4568d7dd8e, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 6
     image: {fileID: -4222809657027527566, guid: 33593e1f88cfb464392e6d0436620a88, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 7
     image: {fileID: -1125129870949079403, guid: ccdef89f43eabe1429fe1b2807f3df6f, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 8
     image: {fileID: 6458882202950309928, guid: 4174bb886c404c445946bf0286e7c768, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 9
     image: {fileID: 2075082942512173011, guid: e80148b2b7d31fb4f8512267373e06c0, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 10
     image: {fileID: 5748849880368545215, guid: eb7f6b343ec7904408ea04848c30d96f, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 11
     image: {fileID: 7810958915790863771, guid: 818471b28fe9d874ebbefe65647041cf, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Hearts
     Rank: 12
     image: {fileID: 4569227078269004199, guid: 060e33a51872b2b47a4433ef2c5caa6e, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
-  - Suit: Hearts
-    Rank: 13
+  - Suit: Club
+    Rank: 12
     image: {fileID: 925846140382599197, guid: 04b214c793c0363468c539446c9cdd80, type: 3}
-    backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
-  clubsOrdered: 0
-  spadesOrdered: 0
-  heartsOrdered: 0
-  diamondsOrdered: 0
 --- !u!4 &1442540817
 Transform:
   m_ObjectHideFlags: 0
