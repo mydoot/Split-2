@@ -1514,7 +1514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976257524506216261, guid: 61b61a78485ff464784589fa703b7e36, type: 3}
       propertyPath: label
-      value: BLUE
+      value: RED
       objectReference: {fileID: 0}
     - target: {fileID: 3976257524506216261, guid: 61b61a78485ff464784589fa703b7e36, type: 3}
       propertyPath: shouldRemoveEmptyGroup

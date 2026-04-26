@@ -11,20 +11,22 @@ using UnityEngine.SceneManagement;
         [SerializeField] SolitaireCardZone cardZone;
 
         [Tooltip("Card model to use for cards")]
-        [SerializeField] SolitaireCardModel[] cards;
+        [SerializeField] SolitaireCardModel[] cards; // Array that contains all of the cards; Will add the entire 52 deck later
 
 
         // --------------------------MONO methods------------------------
 
         void Start()
         {
+        // On game start and select one random card from cards[] array 
         SolitaireCardModel randomCard = this.cards[Random.Range(0, this.cards.Length)];
             List<SolitaireCardModel> cards = new()
         {
             randomCard
         };
+            // cardZone adds a group and also adds a card into said group
             cardZone.AddGroup(cards);
-            cardZone.RefreshCardZone();
+            cardZone.RefreshCardZone(); 
         }
 
 
