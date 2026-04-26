@@ -64,6 +64,20 @@ namespace CardEase
             return cardGroup.GetComponent<CardGroupManager<T>>();
         }
 
+        public CardGroupManagerVertical<T> AddGroupVertical(List<T> cards = null)
+        {
+            GameObject cardGroup = Instantiate(cardGroupPrefab, transform);
+
+            if (cards != null)
+            {
+                foreach (T card in cards)
+                {
+                    cardGroup.GetComponent<CardGroupManagerVertical<T>>().AddCard(card);
+                }
+            }
+            return cardGroup.GetComponent<CardGroupManagerVertical<T>>();
+        }
+
         /// <summary>
         /// Adjusts the spacing between elements in the card zone.
         /// </summary>
@@ -98,8 +112,16 @@ namespace CardEase
                     }
                 }
 
-                CardGroupManager<T> cardGroup = child.GetComponent<CardGroupManager<T>>();
-                cardGroup.RefreshCardGroup();
+
+                if (child.TryGetComponent<CardGroupManagerVertical<T>>(out CardGroupManagerVertical<T> verticalCardGroup))
+                {
+                    verticalCardGroup.RefreshCardGroup();
+                } else
+                {
+                    CardGroupManager<T> cardGroup = child.GetComponent<CardGroupManager<T>>();
+                    cardGroup.RefreshCardGroup();
+                }
+                
             }
         }
 
@@ -198,10 +220,20 @@ namespace CardEase
                 {
                     if (transform.childCount <= 0)
                     {
-                        CardGroupManager<T> groupManager = AddGroup();
-                        Vector2 sizeDelta = groupManager.transform.GetComponent<RectTransform>().sizeDelta;
-                        sizeDelta.x = GetComponent<RectTransform>().sizeDelta.x;
-                        groupManager.transform.GetComponent<RectTransform>().sizeDelta = sizeDelta;
+                        if (cardGroupPrefab.TryGetComponent<CardGroupManagerVertical<T>>(out CardGroupManagerVertical<T> verticalGroupManager))
+                        {
+                            verticalGroupManager = AddGroupVertical();
+                            Vector2 sizeDelta = verticalGroupManager.transform.GetComponent<RectTransform>().sizeDelta;
+                            sizeDelta.x = GetComponent<RectTransform>().sizeDelta.x;
+                            verticalGroupManager.transform.GetComponent<RectTransform>().sizeDelta = sizeDelta;
+                        }
+                        else
+                        {
+                            CardGroupManager<T> groupManager = AddGroup();
+                            Vector2 sizeDelta = groupManager.transform.GetComponent<RectTransform>().sizeDelta;
+                            sizeDelta.x = GetComponent<RectTransform>().sizeDelta.x;
+                            groupManager.transform.GetComponent<RectTransform>().sizeDelta = sizeDelta;
+                        }
                     }
                 }
             }
