@@ -116,5 +116,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SolitaireCardGroup
   cardPrefab: {fileID: 6856127442641504459, guid: 204e4bcac79170940af8b24c24244a8f, type: 3}
-  minSpacing: 100
-  maxSpacing: 200
+  minSpacing: -999999
+  maxSpacing: 9999999
