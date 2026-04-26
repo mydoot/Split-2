@@ -16,6 +16,7 @@ public class Timerhand : MonoBehaviour
     {
         timeRemaining = countdownFrom;
 
+        // Play audio and enable loop (audio length = 1s)
         clockTick.loop = true;
         clockTick.Play();
     }
