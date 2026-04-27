@@ -14,8 +14,5 @@ using UnityEngine;
             this.image = img;
         }
 
-        public SolitaireCardModel getSolitaireCardData()
-    {
-        return this;
-    }
+
     }
