@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using Demo;
 
 
 public class SolitiareManager : MonoBehaviour
@@ -10,6 +11,11 @@ public class SolitiareManager : MonoBehaviour
     [Header("--------------Data----------------")]
     [Tooltip("card zone manager to manage cards in the card zone")]
     [SerializeField] SolitaireCardZone cardZone;
+    [Tooltip("card zone manager for solitaire slots")]
+    [SerializeField] SolitaireCardZone solitaireZone1;
+    [SerializeField] SolitaireCardZone solitaireZone2;
+    [SerializeField] SolitaireCardZone solitaireZone3;
+    [SerializeField] SolitaireCardZone solitaireZone4;
 
     [Tooltip("Card model to use for cards")]
     [SerializeField] SolitaireCardModel[] cards; // Array that contains all of the cards; Will add the entire 52 deck later
@@ -47,6 +53,16 @@ public class SolitiareManager : MonoBehaviour
 
 
         // --------------------------HELPER METHODS------------------------
+
+    }
+
+    public void checkZone1()
+    {
+        Debug.Log("checking cards");
+
+        List<SolitaireCardModel> currentCards = solitaireZone1.GetAllCards().Select(manager => manager.getSolitaireCardData()); 
+
+        //Debug.Log();
 
     }
 }
