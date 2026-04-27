@@ -13,4 +13,9 @@ using UnityEngine;
             this.Rank = rank;
             this.image = img;
         }
+
+        public SolitaireCardModel getSolitaireCardData()
+    {
+        return this;
+    }
     }
