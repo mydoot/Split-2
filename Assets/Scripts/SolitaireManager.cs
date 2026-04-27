@@ -56,13 +56,23 @@ public class SolitiareManager : MonoBehaviour
 
     }
 
+    // Possibly create a checkZones() function and have it update per frame
+    // Each zone is assigned a different suit and if the list lists them in numerical order (1 = Ace & 13 = King), it is valid
+    // Once all 4 zones are complete, finish the mini-game
     public void checkZone1()
     {
         Debug.Log("checking cards");
 
-        List<SolitaireCardModel> currentCards = solitaireZone1.GetAllCards().Select(manager => manager.getSolitaireCardData()); 
+        //AI assisted with the below code
+        List<SolitaireCardModel> currentCards = solitaireZone1.GetAllCards()
+            .OfType<SolitaireCardManager>()
+            .Select(manager => manager.getModel())
+            .ToList();
 
-        //Debug.Log();
+        foreach (SolitaireCardModel card in currentCards)
+        {
+            Debug.Log($"{card.Rank} & {card.Suit}");
+        }
 
     }
 }

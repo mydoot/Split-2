@@ -15,8 +15,5 @@ public class SolitaireCardModel : CardEase.CardModel
             this.image = img;
         }
 
-        public SolitaireCardModel getSolitaireCardData()
-    {
-        return this;
-    }
+
     }
