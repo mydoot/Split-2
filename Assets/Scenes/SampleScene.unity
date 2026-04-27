@@ -332,13 +332,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156281383}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.104851976, w: 0.9944878}
-  m_LocalPosition: {x: -5.82, y: -6.49, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.03721878, w: -0.99930716}
+  m_LocalPosition: {x: -6.14, y: -10.86, z: 0}
   m_LocalScale: {x: 0.4196556, y: 0.3955728, z: 0.366}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.266}
 --- !u!1 &455827962
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,9 +931,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
   timerText: {fileID: 1273572843}
-  countdownFrom: 300
+  countdownFrom: 70
   clockTick: {fileID: 455827963}
   clockFinish: {fileID: 69123990}
+  Pointer: {fileID: 156281385}
+  offScreenPos: {x: -6, y: -11, z: 0}
+  watchPos: {x: -6.1, y: -5.5, z: 0}
+  creepDuration: 2.94
+  tapScaleDown: 0.79
+  tapTiltAngle: 25
+  tapDownDuration: 0.26
+  tapUpDuration: 0.3
+  tapCount: 3
 --- !u!114 &1273572843
 MonoBehaviour:
   m_ObjectHideFlags: 0
