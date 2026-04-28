@@ -4,23 +4,24 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("UI References")]
+    [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private Image[] strikeImages;
+    [SerializeField] private Sprite emptyStrikeSprite;
+    [SerializeField] private Sprite fullStrikeSprite;
+
+    [Header("Game Settings")]
+    [SerializeField] private float moneyPenaltyPerStrike = 10f;
+    [SerializeField] private int maxStrikes = 3;
+
     private int strikeCount = 0;
-    private float moneyCount = 0.0f;
+    private float moneyCount = 0f;
 
     public static GameManager Instance { get; private set; }
 
-    [Header("UI References")]
-    [SerializeField] private TextMeshProUGUI moneyText;
-    [SerializeField] private TextMeshProUGUI strikeText;
-    [SerializeField] private TextMeshProUGUI timerText; // Reference to the timer text
-    [SerializeField] private Image[] strikeImages; // Array of images for visual strike indicators
-    [SerializeField] private Sprite emptyStrikeSprite; // Sprite for empty strike (e.g., empty X)
-    [SerializeField] private Sprite fullStrikeSprite; // Sprite for full strike (e.g., filled X)
-
-    [Header("Game Settings")]
-    [SerializeField] private float moneyPenaltyPerStrike = 10.0f; // Money lost per strike
-    [SerializeField] private int maxStrikes = 3; // Maximum strikes before game over
+    private int EffectiveMaxStrikes => strikeImages != null && strikeImages.Length > 0
+        ? Mathf.Min(maxStrikes, strikeImages.Length)
+        : maxStrikes;
 
     void Awake()
     {
@@ -37,57 +38,70 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        AddStrike(2); // Start with 1 strike for testing
         UpdateUI();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Check if timer has ended (assuming timer text shows "00:00" or similar when done)
-        if (timerText != null && timerText.text == "00:00")
-        {
-            HandleTimerEnd(false, 0f); // Default: loss with no reward
-            timerText.text = ""; // Reset or something to prevent repeated calls
-        }
     }
 
     public void AddMoney(float amount)
     {
-        moneyCount += amount;
+        moneyCount = Mathf.Max(0f, moneyCount + amount);
         UpdateUI();
     }
 
     public void SubtractMoney(float amount)
     {
-        moneyCount -= amount;
-        if (moneyCount < 0) moneyCount = 0;
+        moneyCount = Mathf.Max(0f, moneyCount - amount);
         UpdateUI();
     }
 
-    public void AddStrike()
+    public void AddStrike(int amount = 1)
     {
-        strikeCount++;
-        SubtractMoney(moneyPenaltyPerStrike);
-        if (strikeCount >= maxStrikes)
+        if (amount <= 0) return;
+
+        strikeCount = Mathf.Clamp(strikeCount + amount, 0, EffectiveMaxStrikes);
+        SubtractMoney(moneyPenaltyPerStrike * amount);
+
+        if (strikeCount >= EffectiveMaxStrikes)
         {
             GameOver();
         }
+
         UpdateUI();
     }
 
-    public void MinusStrikes()
+    public void RemoveStrike(int amount = 1)
     {
-        strikeCount -= 1;
-        if (strikeCount < 0) strikeCount = 0;
+        if (amount <= 0) return;
+
+        strikeCount = Mathf.Clamp(strikeCount - amount, 0, EffectiveMaxStrikes);
+        UpdateUI();
+    }
+
+    public void ResetStrikes()
+    {
+        strikeCount = 0;
+        UpdateUI();
+    }
+
+    public void SetStrikeCount(int count)
+    {
+        strikeCount = Mathf.Clamp(count, 0, EffectiveMaxStrikes);
+
+        if (strikeCount >= EffectiveMaxStrikes)
+        {
+            GameOver();
+        }
+
         UpdateUI();
     }
 
     public void HandleTimerEnd(bool playerWon, float rewardAmount = 0.05f)
-    {   
+    {
         if (playerWon)
         {
             AddMoney(rewardAmount);
-        } else
+        }
+        else
         {
             AddStrike();
         }
@@ -96,36 +110,32 @@ public class GameManager : MonoBehaviour
     private void UpdateUI()
     {
         if (moneyText != null)
-            moneyText.text = "$" + moneyCount.ToString("F2");
-
-        if (strikeText != null)
-            strikeText.text = "Strikes: " + strikeCount + "/" + maxStrikes;
-
-        // Update strike images
-        if (strikeImages != null && emptyStrikeSprite != null && fullStrikeSprite != null)
         {
-            for (int i = 0; i < strikeImages.Length; i++)
-            {
-                if (i < strikeCount)
-                {
-                    strikeImages[i].sprite = fullStrikeSprite;
-                }
-                else
-                {
-                    strikeImages[i].sprite = emptyStrikeSprite;
-                }
-            }
+            moneyText.text = "$" + moneyCount.ToString("F2");
+        }
+
+        
+        
+
+        UpdateStrikeImages();
+    }
+
+    private void UpdateStrikeImages()
+    {
+        if (strikeImages == null || emptyStrikeSprite == null || fullStrikeSprite == null) return;
+
+        for (int i = 0; i < strikeImages.Length; i++)
+        {
+            strikeImages[i].sprite = i < strikeCount ? fullStrikeSprite : emptyStrikeSprite;
         }
     }
 
     private void GameOver()
     {
-        // Implement game over logic here
         Debug.Log("Game Over! Too many strikes.");
-        // Perhaps load a game over scene or show a panel
+        // TODO: Show game over UI, reload scene, or stop gameplay
     }
 
-    // Public getters
-    public float GetMoney() { return moneyCount; }
-    public int GetStrikes() { return strikeCount; }
+    public float GetMoney() => moneyCount;
+    public int GetStrikes() => strikeCount;
 }

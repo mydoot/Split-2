@@ -835,11 +835,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e4a06c5611b7c41a1471eac76b3a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
+  cardGameResult: 0
   timerText: {fileID: 1273572843}
   countdownFrom: 300
   clockTick: {fileID: 455827963}
   clockFinish: {fileID: 69123990}
-  Pointer: {fileID: 0}
+  Pointer: {fileID: 1273572845}
   offScreenPos: {x: -5.5, y: -10, z: 0}
   watchPos: {x: -5.1, y: -3.3, z: 0}
   creepDuration: 1.8

@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Timerhand : MonoBehaviour
 {
+    public bool cardGameResult = false; // Placeholder, set this based on actual game logic
     public TextMeshPro timerText;
     public float countdownFrom = 300f;
     private float timeRemaining;
@@ -12,9 +13,6 @@ public class Timerhand : MonoBehaviour
     [SerializeField] AudioSource clockTick;
     [SerializeField] AudioSource clockFinish;
     [SerializeField] Transform Pointer;
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] private bool addStrikeWhenTimerEnds = true;
-    [SerializeField] private int moneyChangeWhenTimerEnds = 0;
 
     // Where the pointer lives off screen (set this in inspector to below/side of screen)
     [SerializeField] private Vector3 offScreenPos = new Vector3(-5.5f, -10f, 0f);
@@ -76,19 +74,23 @@ public class Timerhand : MonoBehaviour
         }
     }
 
-    void OnTimerEnd()
+    public void OnTimerEnd()
     {
+        if (cardGameResult)
+        {
+            // Player won, reward them
+            GameManager.Instance.HandleTimerEnd(true, 0.05f); // Example: reward $0.05 for winning
+        } else
+        {
+            // Player lost, penalize them
+            GameManager.Instance.HandleTimerEnd(false); // No reward, just a strike
+        }
         timerText.text = "0:00";
         Debug.Log("Timer finished!");
+
         clockTick.loop = false;
         clockTick.Stop();
         clockFinish.Play();
-
-        GameManager manager = gameManager != null ? gameManager : GameManager.Instance;
-        if (manager != null)
-        {
-            manager.HandleTimerEnd(addStrikeWhenTimerEnds, moneyChangeWhenTimerEnds);
-        }
     }
 
     void AnimatePointer()
