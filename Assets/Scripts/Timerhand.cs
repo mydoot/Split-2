@@ -12,6 +12,9 @@ public class Timerhand : MonoBehaviour
     [SerializeField] AudioSource clockTick;
     [SerializeField] AudioSource clockFinish;
     [SerializeField] Transform Pointer;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private bool addStrikeWhenTimerEnds = true;
+    [SerializeField] private int moneyChangeWhenTimerEnds = 0;
 
     // Where the pointer lives off screen (set this in inspector to below/side of screen)
     [SerializeField] private Vector3 offScreenPos = new Vector3(-5.5f, -10f, 0f);
@@ -80,6 +83,12 @@ public class Timerhand : MonoBehaviour
         clockTick.loop = false;
         clockTick.Stop();
         clockFinish.Play();
+
+        GameManager manager = gameManager != null ? gameManager : GameManager.Instance;
+        if (manager != null)
+        {
+            manager.HandleTimerEnd(addStrikeWhenTimerEnds, moneyChangeWhenTimerEnds);
+        }
     }
 
     void AnimatePointer()
