@@ -32,7 +32,12 @@ public class SolitiareManager : MonoBehaviour
         List<SolitaireCardModel> cardDeck = randomizeCards.ToList();
 
         // cardZone adds a group and also adds a card into said group
+
         cardZone.AddGroup(cardDeck);
+
+
+
+
         cardZone.RefreshCardZone();
 
 
