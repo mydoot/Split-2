@@ -57,6 +57,10 @@ MonoBehaviour:
   maxSpacing: 200
   shouldRemoveEmptyGroup: 0
   label: SolitaireCardZone
+  Spade: 0
+  Club: 0
+  Hearts: 0
+  Diamonds: 0
 --- !u!114 &2968768324168821953
 MonoBehaviour:
   m_ObjectHideFlags: 0
