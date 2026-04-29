@@ -32,38 +32,38 @@ public class SolitiareManager : MonoBehaviour
 
         // cardZone adds a group and also adds a card into said group
 
-        float RNG = getRandomNumber(0f, 3f);
+       // Used AI belows
+        int i = 0;
 
-        for (int i = 0; i < cardDeck.Count; i += RNG)
+        while (i < cardDeck.Count)
         {
-            // Figure out how many cards to grab. Usually 3, but might be 1 or 2 at the very end!
-            int cardsToGrab = Mathf.Min(3, deckToShuffle.Count - i);
+            // Random.Range is max exclusive when using ints
+            int randomGroupSize = Random.Range(1, 4);
 
-            // GetRange extracts that specific chunk, and we add it as a new list to our master list
+            int cardsToGrab = Mathf.Min(randomGroupSize, cardDeck.Count - i);
+           
             List<SolitaireCardModel> newGroup = cardDeck.GetRange(i, cardsToGrab);
             cardZone.AddGroup(newGroup);
 
-            RNG = getRandomNumber(0f, 3f);
+            i += cardsToGrab;
         }
 
 
 
         cardZone.RefreshCardZone();
 
-
-
-        // --------------------------HELPER METHODS------------------------
-
     }
+
+    // --------------------------HELPER METHODS------------------------
 
     void Update()
     {
         checkZones();
     }
 
-    private float getRandomNumber(float min, float max)
+    private int getRandomNumber(int min, int max)
     {
-        return Random.Range(min, max)
+        return Random.Range(min, max);
     }
 
     // Possibly create a checkZones() function and have it update per frame

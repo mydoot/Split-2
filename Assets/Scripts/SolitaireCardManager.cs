@@ -1,4 +1,6 @@
 using UnityEngine.UI;
+using UnityEngine;
+using System.Linq;
 
 public class SolitaireCardManager : CardEase.CardManager<SolitaireCardModel>
 {
@@ -12,9 +14,12 @@ public class SolitaireCardManager : CardEase.CardManager<SolitaireCardModel>
 
     public override void SetData(SolitaireCardModel cardModel)
     {
-        if (cardModel.image != null)
+        if (Random.Range(0, 2) == 0)
         {
             this.cardImage.sprite = cardModel.backsideImage;
+        } else
+        {
+            this.cardImage.sprite = cardModel.image;
         }
         model = cardModel;
     }
