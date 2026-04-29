@@ -659,11 +659,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: maxSpacing
-      value: 300
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: minSpacing
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: shouldRemoveEmptyGroup

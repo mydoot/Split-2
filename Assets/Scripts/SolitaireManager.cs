@@ -26,24 +26,44 @@ public class SolitiareManager : MonoBehaviour
 
     void Start()
     {
-        // On game start and select one random card from cards[] array 
         SolitaireCardModel[] randomizeCards = cards.OrderBy(x => UnityEngine.Random.value).ToArray();
 
         List<SolitaireCardModel> cardDeck = randomizeCards.ToList();
 
         // cardZone adds a group and also adds a card into said group
-        cardZone.AddGroup(cardDeck);
+
+       // Used AI belows
+        int i = 0;
+
+        while (i < cardDeck.Count)
+        {
+            // Random.Range is max exclusive when using ints
+            int randomGroupSize = Random.Range(1, 4);
+
+            int cardsToGrab = Mathf.Min(randomGroupSize, cardDeck.Count - i);
+           
+            List<SolitaireCardModel> newGroup = cardDeck.GetRange(i, cardsToGrab);
+            cardZone.AddGroup(newGroup);
+
+            i += cardsToGrab;
+        }
+
+
+
         cardZone.RefreshCardZone();
 
-
-
-        // --------------------------HELPER METHODS------------------------
-
     }
+
+    // --------------------------HELPER METHODS------------------------
 
     void Update()
     {
         checkZones();
+    }
+
+    private int getRandomNumber(int min, int max)
+    {
+        return Random.Range(min, max);
     }
 
     // Possibly create a checkZones() function and have it update per frame
