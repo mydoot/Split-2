@@ -26,15 +26,25 @@ public class SolitiareManager : MonoBehaviour
 
     void Start()
     {
-        // On game start and select one random card from cards[] array 
         SolitaireCardModel[] randomizeCards = cards.OrderBy(x => UnityEngine.Random.value).ToArray();
 
         List<SolitaireCardModel> cardDeck = randomizeCards.ToList();
 
         // cardZone adds a group and also adds a card into said group
 
-        cardZone.AddGroup(cardDeck);
+        float RNG = getRandomNumber(0f, 3f);
 
+        for (int i = 0; i < cardDeck.Count; i += RNG)
+        {
+            // Figure out how many cards to grab. Usually 3, but might be 1 or 2 at the very end!
+            int cardsToGrab = Mathf.Min(3, deckToShuffle.Count - i);
+
+            // GetRange extracts that specific chunk, and we add it as a new list to our master list
+            List<SolitaireCardModel> newGroup = cardDeck.GetRange(i, cardsToGrab);
+            cardZone.AddGroup(newGroup);
+
+            RNG = getRandomNumber(0f, 3f);
+        }
 
 
 
@@ -49,6 +59,11 @@ public class SolitiareManager : MonoBehaviour
     void Update()
     {
         checkZones();
+    }
+
+    private float getRandomNumber(float min, float max)
+    {
+        return Random.Range(min, max)
     }
 
     // Possibly create a checkZones() function and have it update per frame
