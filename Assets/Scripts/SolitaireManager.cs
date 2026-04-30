@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 using DG.Tweening;
 using Demo;
+using UnityEngine.UI;
 
 
 public class SolitiareManager : MonoBehaviour
@@ -27,6 +28,10 @@ public class SolitiareManager : MonoBehaviour
     [SerializeField] public bool spadesOrdered;
     [SerializeField] public bool heartsOrdered;
     [SerializeField] public bool diamondsOrdered;
+
+    //ivate bool beginConveyor = false;
+    private float groupLength;
+    private float spacing;
     
 
 
@@ -37,7 +42,6 @@ public class SolitiareManager : MonoBehaviour
     {
         //DOTween.init();
 
-        cardZone.transform.DOMoveX(100, 15).From();
 
         SolitaireCardModel[] randomizeCards = cards.OrderBy(x => UnityEngine.Random.value).ToArray();
 
@@ -61,9 +65,11 @@ public class SolitiareManager : MonoBehaviour
             i += cardsToGrab;
         }
 
+        cardZone.transform.DOMoveX(50, 10).From().OnComplete(() => cardZone.startConveyor());
 
 
         cardZone.RefreshCardZone();
+   
 
     }
 
@@ -73,6 +79,8 @@ public class SolitiareManager : MonoBehaviour
     {
         checkZones();
     }
+
+  
 
     private int getRandomNumber(int min, int max)
     {
