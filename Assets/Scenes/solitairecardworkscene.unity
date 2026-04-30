@@ -495,7 +495,7 @@ Transform:
   m_GameObject: {fileID: 156281383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.104851976, w: 0.9944878}
-  m_LocalPosition: {x: -537, y: -420, z: 6980.1777}
+  m_LocalPosition: {x: -549, y: -385, z: 6980.1777}
   m_LocalScale: {x: 25.247564, y: 25.56155, z: 81.55374}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -623,7 +623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.87
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -663,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: minSpacing
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: shouldRemoveEmptyGroup
@@ -886,7 +886,6 @@ GameObject:
   - component: {fileID: 881390574}
   - component: {fileID: 881390573}
   - component: {fileID: 881390572}
-  - component: {fileID: 881390575}
   m_Layer: 0
   m_Name: StatScreenManager
   m_TagString: Untagged
@@ -918,11 +917,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a09b33a298534e8ed1f410da4e525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatScreenController
-  timerhand: {fileID: 0}
-  statPanel: {fileID: 0}
-  resultText: {fileID: 0}
-  timeText: {fileID: 0}
-  moneyText: {fileID: 0}
+  timerhand: {fileID: 1273572842}
+  solitaireManager: {fileID: 1442540816}
+  statPanel: {fileID: 1244252386}
+  resultText: {fileID: 1738844973}
+  timeText: {fileID: 887179279}
+  moneyText: {fileID: 1836217779}
   sceneToLoad: 3D Scene
   statScreenDuration: 5
   moneyReward: 0.01
@@ -941,26 +941,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &881390575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881390571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f7a09b33a298534e8ed1f410da4e525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StatScreenController
-  timerhand: {fileID: 1273572842}
-  statPanel: {fileID: 1244252386}
-  resultText: {fileID: 1738844973}
-  timeText: {fileID: 887179279}
-  moneyText: {fileID: 1836217779}
-  sceneToLoad: 3D Scene
-  statScreenDuration: 5
-  moneyReward: 0.01
 --- !u!1 &887179277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,12 +1572,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
   cardGameResult: 0
   timerText: {fileID: 1273572843}
-  countdownFrom: 30
+  countdownFrom: 300
   clockTick: {fileID: 0}
   clockFinish: {fileID: 0}
-  Pointer: {fileID: 0}
-  offScreenPos: {x: -5.5, y: -10, z: 0}
-  watchPos: {x: -5.1, y: -3.3, z: 0}
+  Pointer: {fileID: 156281385}
+  offScreenPos: {x: -230, y: -1000, z: 0}
+  watchPos: {x: -549, y: -385, z: 0}
   creepDuration: 1.8
   tapScaleDown: 0.8
   tapTiltAngle: 12
@@ -2270,6 +2250,10 @@ MonoBehaviour:
     Rank: 13
     image: {fileID: 925846140382599197, guid: 04b214c793c0363468c539446c9cdd80, type: 3}
     backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
+  clubsOrdered: 0
+  spadesOrdered: 0
+  heartsOrdered: 0
+  diamondsOrdered: 0
 --- !u!4 &1442540817
 Transform:
   m_ObjectHideFlags: 0

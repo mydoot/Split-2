@@ -8,6 +8,9 @@ public class StatScreenController : MonoBehaviour
     [Header("Timer Reference")]
     public Timerhand timerhand;
 
+    [Header("Solitaire Game Manager Reference")]
+    [SerializeField] public SolitiareManager solitaireManager;
+
     [Header("UI References")]
     public GameObject statPanel;
     public TextMeshProUGUI resultText;
@@ -30,6 +33,7 @@ public class StatScreenController : MonoBehaviour
         {
             statPanel.SetActive(false);
         }
+
     }
 
     void Update()
@@ -48,6 +52,11 @@ public class StatScreenController : MonoBehaviour
         {
             ShowStatsAndReturn();
         }
+
+        if (solitaireManager.checkWin())
+        {
+            ShowStatsAndReturn();
+        }
     }
 
     public void ShowStatsAndReturn()
@@ -60,7 +69,7 @@ public class StatScreenController : MonoBehaviour
 
     private IEnumerator StatSequence()
     {
-        bool won = timerhand.cardGameResult;
+        bool won = solitaireManager.checkWin();
         float moneyMade = won ? moneyReward : 0f;
 
         if (GameManager.Instance != null)

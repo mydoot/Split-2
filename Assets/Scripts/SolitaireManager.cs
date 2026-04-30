@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using DG.Tweening;
 using Demo;
 
 
@@ -21,11 +22,23 @@ public class SolitiareManager : MonoBehaviour
     [Tooltip("Card model to use for cards")]
     [SerializeField] SolitaireCardModel[] cards; // Array that contains all of the cards; Will add the entire 52 deck later
 
+    [Tooltip("force win by checking the box")]
+    [SerializeField] public bool clubsOrdered;
+    [SerializeField] public bool spadesOrdered;
+    [SerializeField] public bool heartsOrdered;
+    [SerializeField] public bool diamondsOrdered;
+    
+
+
 
     // --------------------------MONO methods------------------------
 
     void Start()
     {
+        //DOTween.init();
+
+        cardZone.transform.DOMoveX(100, 15).From();
+
         SolitaireCardModel[] randomizeCards = cards.OrderBy(x => UnityEngine.Random.value).ToArray();
 
         List<SolitaireCardModel> cardDeck = randomizeCards.ToList();
@@ -77,25 +90,39 @@ public class SolitiareManager : MonoBehaviour
         if (performCheck(changeCurrentCards(solitaireZone1), "Club"))
         {
             Debug.Log("Clubs is ordered");
+            clubsOrdered = true;
         }
 
         //Check Spade
         if (performCheck(changeCurrentCards(solitaireZone2), "Spade")){
             Debug.Log("Spade is ordered");
+            spadesOrdered = true;
         }
 
         //Check Hearts
         if (performCheck(changeCurrentCards(solitaireZone3), "Hearts"))
         {
             Debug.Log("Hearts is ordered");
+            heartsOrdered = true;
         }
 
         //Check Diamonds
         if (performCheck(changeCurrentCards(solitaireZone4), "Diamonds"))
         {
             Debug.Log("Diamonds is ordered");
+            diamondsOrdered = true;
         }
 
+    }
+
+    public bool checkWin()
+    {
+        if (clubsOrdered && spadesOrdered && heartsOrdered && diamondsOrdered)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private bool performCheck(List<SolitaireCardModel> deck, string suit)
