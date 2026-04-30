@@ -29,19 +29,11 @@ public class SolitiareManager : MonoBehaviour
     [SerializeField] public bool heartsOrdered;
     [SerializeField] public bool diamondsOrdered;
 
-    //ivate bool beginConveyor = false;
-    private float groupLength;
-    private float spacing;
-    
-
-
-
     // --------------------------MONO methods------------------------
 
     void Start()
     {
         //DOTween.init();
-
 
         SolitaireCardModel[] randomizeCards = cards.OrderBy(x => UnityEngine.Random.value).ToArray();
 
@@ -49,7 +41,7 @@ public class SolitiareManager : MonoBehaviour
 
         // cardZone adds a group and also adds a card into said group
 
-       // Used AI belows
+        // Used AI belows
         int i = 0;
 
         while (i < cardDeck.Count)
@@ -58,15 +50,14 @@ public class SolitiareManager : MonoBehaviour
             int randomGroupSize = Random.Range(1, 4);
 
             int cardsToGrab = Mathf.Min(randomGroupSize, cardDeck.Count - i);
-           
+
             List<SolitaireCardModel> newGroup = cardDeck.GetRange(i, cardsToGrab);
             cardZone.AddGroup(newGroup);
 
             i += cardsToGrab;
         }
 
-       // Used AI belows
-        int i = 0;
+        cardZone.transform.DOMoveX(50, 10).From().OnComplete(() => cardZone.startConveyor());
 
         while (i < cardDeck.Count)
         {
@@ -85,7 +76,7 @@ public class SolitiareManager : MonoBehaviour
 
 
         cardZone.RefreshCardZone();
-   
+
 
     }
 
@@ -96,7 +87,7 @@ public class SolitiareManager : MonoBehaviour
         checkZones();
     }
 
-  
+
 
     private int getRandomNumber(int min, int max)
     {
@@ -118,7 +109,8 @@ public class SolitiareManager : MonoBehaviour
         }
 
         //Check Spade
-        if (performCheck(changeCurrentCards(solitaireZone2), "Spade")){
+        if (performCheck(changeCurrentCards(solitaireZone2), "Spade"))
+        {
             Debug.Log("Spade is ordered");
             spadesOrdered = true;
         }
