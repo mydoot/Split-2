@@ -121,15 +121,31 @@ namespace CardEase
             int newSiblingIndex = parentGroup.childCount;
             for (int i = 0; i < parentGroup.childCount; i++)
             {
-                if (transform.position.x < parentGroup.GetChild(i).position.x)
+                if (parentGroup.TryGetComponent<SolitaireCardGroup>(out SolitaireCardGroup groupHorz))
                 {
-                    newSiblingIndex = i;
-                    if (cardPlaceholder.transform.GetSiblingIndex() < newSiblingIndex)
+                    if (transform.position.x < parentGroup.GetChild(i).position.x)
                     {
-                        newSiblingIndex--;
-                    }
+                        newSiblingIndex = i;
+                        if (cardPlaceholder.transform.GetSiblingIndex() < newSiblingIndex)
+                        {
+                            newSiblingIndex--;
+                        }
 
-                    break;
+                        break;
+                    }
+                }
+                else if (parentGroup.TryGetComponent<SolitaireCardGroupVertical>(out SolitaireCardGroupVertical groupVert))
+                {
+                    if (transform.position.y > parentGroup.GetChild(i).position.y)
+                    {
+                        newSiblingIndex = i;
+                        if (cardPlaceholder.transform.GetSiblingIndex() < newSiblingIndex)
+                        {
+                            newSiblingIndex--;
+                        }
+
+                        break;
+                    }
                 }
             }
             cardPlaceholder.transform.SetSiblingIndex(newSiblingIndex);
