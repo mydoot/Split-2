@@ -1576,7 +1576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
   cardGameResult: 0
   timerText: {fileID: 1273572843}
-  countdownFrom: 300
+  countdownFrom: 10
   clockTick: {fileID: 0}
   clockFinish: {fileID: 0}
   Pointer: {fileID: 156281385}

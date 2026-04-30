@@ -59,21 +59,6 @@ public class SolitiareManager : MonoBehaviour
 
         cardZone.transform.DOMoveX(50, 10).From().OnComplete(() => cardZone.startConveyor());
 
-        while (i < cardDeck.Count)
-        {
-            // Random.Range is max exclusive when using ints
-            int randomGroupSize = Random.Range(1, 4);
-
-            int cardsToGrab = Mathf.Min(randomGroupSize, cardDeck.Count - i);
-           
-            List<SolitaireCardModel> newGroup = cardDeck.GetRange(i, cardsToGrab);
-            cardZone.AddGroup(newGroup);
-
-            i += cardsToGrab;
-        }
-
-        cardZone.transform.DOMoveX(50, 10).From().OnComplete(() => cardZone.startConveyor());
-
 
         cardZone.RefreshCardZone();
 
