@@ -32,7 +32,7 @@ public class SolitiareManager : MonoBehaviour
     //ivate bool beginConveyor = false;
     private float groupLength;
     private float spacing;
-    
+
 
 
 
@@ -42,14 +42,13 @@ public class SolitiareManager : MonoBehaviour
     {
         //DOTween.init();
 
-
         SolitaireCardModel[] randomizeCards = cards.OrderBy(x => UnityEngine.Random.value).ToArray();
 
         List<SolitaireCardModel> cardDeck = randomizeCards.ToList();
 
         // cardZone adds a group and also adds a card into said group
 
-       // Used AI belows
+        // Used AI belows
         int i = 0;
 
         while (i < cardDeck.Count)
@@ -58,23 +57,7 @@ public class SolitiareManager : MonoBehaviour
             int randomGroupSize = Random.Range(1, 4);
 
             int cardsToGrab = Mathf.Min(randomGroupSize, cardDeck.Count - i);
-           
-            List<SolitaireCardModel> newGroup = cardDeck.GetRange(i, cardsToGrab);
-            cardZone.AddGroup(newGroup);
 
-            i += cardsToGrab;
-        }
-
-       // Used AI belows
-        int i = 0;
-
-        while (i < cardDeck.Count)
-        {
-            // Random.Range is max exclusive when using ints
-            int randomGroupSize = Random.Range(1, 4);
-
-            int cardsToGrab = Mathf.Min(randomGroupSize, cardDeck.Count - i);
-           
             List<SolitaireCardModel> newGroup = cardDeck.GetRange(i, cardsToGrab);
             cardZone.AddGroup(newGroup);
 
@@ -85,7 +68,7 @@ public class SolitiareManager : MonoBehaviour
 
 
         cardZone.RefreshCardZone();
-   
+
 
     }
 
@@ -96,7 +79,7 @@ public class SolitiareManager : MonoBehaviour
         checkZones();
     }
 
-  
+
 
     private int getRandomNumber(int min, int max)
     {
@@ -118,7 +101,8 @@ public class SolitiareManager : MonoBehaviour
         }
 
         //Check Spade
-        if (performCheck(changeCurrentCards(solitaireZone2), "Spade")){
+        if (performCheck(changeCurrentCards(solitaireZone2), "Spade"))
+        {
             Debug.Log("Spade is ordered");
             spadesOrdered = true;
         }
