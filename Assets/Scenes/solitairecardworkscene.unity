@@ -369,7 +369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -249, y: -45.72}
+  m_AnchoredPosition: {x: -268, y: -49.72}
   m_SizeDelta: {x: 67.37, y: 93.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &156023516
@@ -495,7 +495,7 @@ Transform:
   m_GameObject: {fileID: 156281383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.104851976, w: 0.9944878}
-  m_LocalPosition: {x: -537, y: -420, z: 6980.1777}
+  m_LocalPosition: {x: -549, y: -385, z: 6980.1777}
   m_LocalScale: {x: 25.247564, y: 25.56155, z: 81.55374}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,7 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1889.72
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_SizeDelta.y
@@ -623,7 +623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.87
+      value: -0.00000095367
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -658,6 +658,10 @@ PrefabInstance:
       value: 0.3207547
       objectReference: {fileID: 0}
     - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
+      propertyPath: speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: maxSpacing
       value: 175
       objectReference: {fileID: 0}
@@ -667,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5312267150853097239, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: shouldRemoveEmptyGroup
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -886,7 +890,6 @@ GameObject:
   - component: {fileID: 881390574}
   - component: {fileID: 881390573}
   - component: {fileID: 881390572}
-  - component: {fileID: 881390575}
   m_Layer: 0
   m_Name: StatScreenManager
   m_TagString: Untagged
@@ -918,11 +921,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a09b33a298534e8ed1f410da4e525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatScreenController
-  timerhand: {fileID: 0}
-  statPanel: {fileID: 0}
-  resultText: {fileID: 0}
-  timeText: {fileID: 0}
-  moneyText: {fileID: 0}
+  timerhand: {fileID: 1273572842}
+  solitaireManager: {fileID: 1442540816}
+  statPanel: {fileID: 1244252386}
+  resultText: {fileID: 1738844973}
+  timeText: {fileID: 887179279}
+  moneyText: {fileID: 1836217779}
   sceneToLoad: 3D Scene
   statScreenDuration: 5
   moneyReward: 0.01
@@ -941,26 +945,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &881390575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881390571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f7a09b33a298534e8ed1f410da4e525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StatScreenController
-  timerhand: {fileID: 1273572842}
-  statPanel: {fileID: 1244252386}
-  resultText: {fileID: 1738844973}
-  timeText: {fileID: 887179279}
-  moneyText: {fileID: 1836217779}
-  sceneToLoad: 3D Scene
-  statScreenDuration: 5
-  moneyReward: 0.01
 --- !u!1 &887179277
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,8 +979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -157}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 99}
+  m_SizeDelta: {x: 358.5812, y: 69.6211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &887179279
 MonoBehaviour:
@@ -1045,14 +1029,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1534,7 +1518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.69411767}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1592,12 +1576,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
   cardGameResult: 0
   timerText: {fileID: 1273572843}
-  countdownFrom: 30
+  countdownFrom: 300
   clockTick: {fileID: 0}
   clockFinish: {fileID: 0}
-  Pointer: {fileID: 0}
-  offScreenPos: {x: -5.5, y: -10, z: 0}
-  watchPos: {x: -5.1, y: -3.3, z: 0}
+  Pointer: {fileID: 156281385}
+  offScreenPos: {x: -230, y: -1000, z: 0}
+  watchPos: {x: -549, y: -385, z: 0}
   creepDuration: 1.8
   tapScaleDown: 0.8
   tapTiltAngle: 12
@@ -2164,7 +2148,7 @@ MonoBehaviour:
     backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Spade
     Rank: 13
-    image: {fileID: -1319678240526198345, guid: ba36406edf3a8344ab95e59a165deab1, type: 3}
+    image: {fileID: -3060795020005784151, guid: 75e9d84468d67f84486b209ee2050ca1, type: 3}
     backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
   - Suit: Diamonds
     Rank: 1
@@ -2270,6 +2254,10 @@ MonoBehaviour:
     Rank: 13
     image: {fileID: 925846140382599197, guid: 04b214c793c0363468c539446c9cdd80, type: 3}
     backsideImage: {fileID: 5478366606011442021, guid: 02b1c4a67e10f20479277b77c1f0861e, type: 3}
+  clubsOrdered: 0
+  spadesOrdered: 0
+  heartsOrdered: 0
+  diamondsOrdered: 0
 --- !u!4 &1442540817
 Transform:
   m_ObjectHideFlags: 0
@@ -2657,8 +2645,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -67}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 316}
+  m_SizeDelta: {x: 1323.9297, y: 281.0766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738844973
 MonoBehaviour:
@@ -2707,14 +2695,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 250
+  m_fontSizeBase: 250
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 3
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2794,8 +2782,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -275}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.000061035, y: -81}
+  m_SizeDelta: {x: 358.5812, y: 69.6211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836217779
 MonoBehaviour:
@@ -2844,14 +2832,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

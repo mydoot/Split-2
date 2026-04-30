@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.87058824}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -118,3 +118,4 @@ MonoBehaviour:
   cardPrefab: {fileID: 6856127442641504459, guid: 204e4bcac79170940af8b24c24244a8f, type: 3}
   minSpacing: -120
   maxSpacing: 50
+  isEmpty: 0
