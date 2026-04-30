@@ -5,14 +5,13 @@ public class Movement : MonoBehaviour
 {
     Rigidbody MarbleRb;
     public float speed = 5f;
-    public Camera cam;
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         MarbleRb = GetComponent<Rigidbody>();
     }
 
-
+    // Update is called once per frame
     void Update()
     {
         Roll();
@@ -23,19 +22,19 @@ public class Movement : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard.wKey.isPressed)
         {
-            MarbleRb.transform.position += cam.transform.forward * speed * Time.deltaTime;
+            MarbleRb.transform.position += Vector3.forward * speed * Time.deltaTime;
         }
         if (keyboard.sKey.isPressed)
         {
-            MarbleRb.transform.position += -cam.transform.forward * speed * Time.deltaTime;
+            MarbleRb.transform.position += Vector3.back * speed * Time.deltaTime;
         }
         if (keyboard.aKey.isPressed)
         {
-            MarbleRb.transform.position += -cam.transform.right * speed * Time.deltaTime;
+            MarbleRb.transform.position += Vector3.left * speed * Time.deltaTime;
         }
         if (keyboard.dKey.isPressed)
         {
-            MarbleRb.transform.position += cam.transform.right * speed * Time.deltaTime;
+            MarbleRb.transform.position += Vector3.right * speed * Time.deltaTime;
         }
     }
 }

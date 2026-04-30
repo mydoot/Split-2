@@ -14,9 +14,6 @@ namespace CardEase
         [SerializeField] float minSpacing = -99999f;
         [Tooltip("maximum spacing allowed between cards")]
         [SerializeField] float maxSpacing = 99999f;
-        /*[SerializeField] public  isVertical = false;
-        [SerializeField] bool public isHorizontal = false;*/
-        
 
 
         [Header("--------------PRIVATE----------------")]
@@ -24,7 +21,6 @@ namespace CardEase
         HorizontalLayoutGroup horizontalLayoutGroup;
         [Tooltip("Parent zone of the group")]
         CardZoneManager<T> parentZone;
-
 
 
         // --------------------------MONO methods------------------------
