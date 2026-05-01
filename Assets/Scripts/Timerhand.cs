@@ -6,8 +6,9 @@ public class Timerhand : MonoBehaviour
 {
     public bool cardGameResult = false; // Placeholder, set this based on actual game logic
     public TextMeshProUGUI timerText;
-    public float countdownFrom = 300f;
+    public float countdownFrom = 10f;
     private float timeRemaining;
+    private float secondTimer = 0f;
     private bool isRunning = true;
 
     [SerializeField] AudioSource clockTick;
@@ -40,9 +41,6 @@ public class Timerhand : MonoBehaviour
 
         // Start the pointer off screen
         Pointer.localPosition = offScreenPos;
-
-        clockTick.loop = true;
-        clockTick.Play();
     }
 
     void Update()
@@ -50,7 +48,6 @@ public class Timerhand : MonoBehaviour
         if (!isRunning) return;
 
         timeRemaining -= Time.deltaTime;
-
         if (timeRemaining <= 0)
         {
             timeRemaining = 0;
@@ -58,11 +55,18 @@ public class Timerhand : MonoBehaviour
             OnTimerEnd();
         }
 
+        secondTimer += Time.deltaTime;
+        if (secondTimer >= 1f)
+        {
+            secondTimer = 0f;
+            clockTick.Play();
+        }
+
         int minutes = (int)(timeRemaining / 60);
         int seconds = (int)(timeRemaining % 60);
-  
-        timerText.text = string.Format("{0}:{1:D2}", minutes, seconds);
 
+        timerText.text = string.Format("{0}:{1:D2}", minutes, seconds);
+        
         if (seconds == 05 && !hasAnimatedThisMinute && !isAnimating)
         {
             hasAnimatedThisMinute = true;
@@ -76,6 +80,9 @@ public class Timerhand : MonoBehaviour
 
     public void OnTimerEnd()
     {
+        clockTick.Stop();
+        clockFinish.Play();
+
         if (cardGameResult)
         {
             // Player won, reward them
@@ -87,10 +94,6 @@ public class Timerhand : MonoBehaviour
         }
         timerText.text = "0:00";
         Debug.Log("Timer finished!");
-
-        clockTick.loop = false;
-        clockTick.Stop();
-        clockFinish.Play();
     }
 
     void AnimatePointer()
