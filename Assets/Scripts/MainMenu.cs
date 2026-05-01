@@ -31,6 +31,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("3D Scene");
     }
 
+    public void StartCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
+    public void StartMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Start()
     {
         ambience.loop = true;
@@ -56,7 +66,7 @@ public class MainMenu : MonoBehaviour
             {
                 source = myLeg,
                 name = "my leg",
-                cooldown = 20f,
+                cooldown = 15f,
                 chance = 0.25f
             }
         );
