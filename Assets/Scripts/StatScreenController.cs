@@ -30,6 +30,10 @@ public class StatScreenController : MonoBehaviour
     [SerializeField] private float elapsedTime = 0f;
     [SerializeField] private float remainingTime = 0f;
 
+    [Header("Audio Sources")]
+    [SerializeField] private AudioSource winSound;
+    [SerializeField] private AudioSource loseSound;
+
     void Start()
     {
         if (statPanel != null)
@@ -100,6 +104,7 @@ public class StatScreenController : MonoBehaviour
         resultText.text = won ? "Success!" : "Strike!";
         timeText.text = "Time Taken: " + elapsedTime.ToString("F1") + " seconds";
         moneyText.text = "Money Made: $" + moneyMade.ToString("F2");
+        (won ? winSound : loseSound).Play();
 
         Debug.Log("Stat screen showing. Returning to 3D scene soon.");
 

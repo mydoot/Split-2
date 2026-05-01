@@ -4,21 +4,26 @@ using System.Collections;
 
 public class Timerhand : MonoBehaviour
 {
+    [Header("--- PLACEHOLDER ---")]
     public bool cardGameResult = false; // Placeholder, set this based on actual game logic
-    public TextMeshProUGUI timerText;
-    public float countdownFrom = 10f;
-    private float timeRemaining;
-    private float secondTimer = 0f;
-    private bool isRunning = true;
 
+    [Header("--- AUDIO SOURCES ---")]
     [SerializeField] AudioSource clockTick;
     [SerializeField] AudioSource clockFinish;
     [SerializeField] AudioSource boss_warning;
     [SerializeField] AudioSource boss_warning_2;
     [SerializeField] AudioSource boss_warning_3;
     [SerializeField] AudioSource boss_warning_4;
-    [SerializeField] Transform Pointer;
+    
+    [Header("--- TIMER SETTINGS ---")]
+    public TextMeshProUGUI timerText;
+    public float countdownFrom = 10f;
+    private float timeRemaining;
+    private float secondTimer = 0f;
+    private bool isRunning = true;
 
+    [Header("--- HAND ANIMATION SETTINGS ---")]
+    [SerializeField] Transform Pointer;
     // Where the pointer lives off screen (set this in inspector to below/side of screen)
     [SerializeField] private Vector3 offScreenPos = new Vector3(-5.5f, -10f, 0f);
     // Where it creeps up to (slightly past the watch face)
