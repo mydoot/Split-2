@@ -24,10 +24,11 @@ public class StatScreenController : MonoBehaviour
     public float statScreenDuration = 5f;
 
     [Header("Reward Settings")]
-    public float moneyReward = 0.01f;
+    public float moneyReward = 0.5f;
 
     private bool hasShownStats = false;
-    private float elapsedTime = 0f;
+    [SerializeField] private float elapsedTime = 0f;
+    [SerializeField] private float remainingTime = 0f;
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class StatScreenController : MonoBehaviour
             return;
 
         elapsedTime += Time.deltaTime;
+        int elapsedSeconds = (int)(elapsedTime % 60);
 
         if (timerhand.timerText != null && timerhand.timerText.text.Trim() == "0:00")
         {
@@ -57,6 +59,8 @@ public class StatScreenController : MonoBehaviour
 
         if (solitaireManager.checkWin())
         {
+            remainingTime = timerhand.countdownFrom - elapsedSeconds;
+            moneyReward += (remainingTime  * 0.0133334f) / 2 ;
             ShowStatsAndReturn();
         }
     }
@@ -81,6 +85,7 @@ public class StatScreenController : MonoBehaviour
         if (GameManager.Instance != null)
         {
             Debug.Log("Strike count is now: " + GameManager.Instance.GetStrikes());
+            GameManager.Instance.HandleTimerEnd(true, moneyReward);
         }
         else
         {

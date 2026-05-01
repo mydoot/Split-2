@@ -1517,6 +1517,8 @@ MonoBehaviour:
   sceneToLoad: 3D Scene
   statScreenDuration: 5
   moneyReward: 0.01
+  elapsedTime: 0
+  remainingTime: 0
 --- !u!4 &881390574
 Transform:
   m_ObjectHideFlags: 0
@@ -2756,7 +2758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3287958206103211978, guid: 903225efed826584a90eb49057b9d5bd, type: 3}
+  m_Sprite: {fileID: -290961972477977106, guid: c62281676e05ce647a96c0b8a0c108f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8889,8 +8891,8 @@ Transform:
   m_GameObject: {fileID: 1717775257}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0829, y: 323, z: -40}
-  m_LocalScale: {x: 481.26538, y: 436.4559, z: 477.43823}
+  m_LocalPosition: {x: -596, y: 328, z: -40}
+  m_LocalScale: {x: 794.0879, y: 436.4559, z: 477.43823}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 580974511}

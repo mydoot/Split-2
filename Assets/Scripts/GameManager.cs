@@ -11,11 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite fullStrikeSprite;
 
     [Header("Game Settings")]
-    [SerializeField] private float moneyPenaltyPerStrike = 10f;
+    //[SerializeField] private float moneyPenaltyPerStrike = 10f;
     [SerializeField] private int maxStrikes = 3;
 
     private int strikeCount = 0;
-    private float moneyCount = 0f;
+    [SerializeField] private float moneyCount = -10.03f;
 
     public static GameManager Instance { get; private set; }
 
@@ -43,13 +43,13 @@ public class GameManager : MonoBehaviour
 
     public void AddMoney(float amount)
     {
-        moneyCount = Mathf.Max(0f, moneyCount + amount);
+        moneyCount = moneyCount + amount;
         UpdateUI();
     }
 
     public void SubtractMoney(float amount)
     {
-        moneyCount = Mathf.Max(0f, moneyCount - amount);
+        moneyCount = moneyCount - amount;
         UpdateUI();
     }
 
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         if (amount <= 0) return;
 
         strikeCount = Mathf.Clamp(strikeCount + amount, 0, EffectiveMaxStrikes);
-        SubtractMoney(moneyPenaltyPerStrike * amount);
+        //SubtractMoney(moneyPenaltyPerStrike * amount);
 
         if (strikeCount >= EffectiveMaxStrikes)
         {
