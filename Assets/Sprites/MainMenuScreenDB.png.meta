@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 903225efed826584a90eb49057b9d5bd
+guid: 8334782497c2ca74e9b9d991bd7f69ed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3287958206103211978
-    second: ConveyorBeltArt1 1_0
+      213: 1249260580546491542
+    second: MainMenuScreenDB_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ConveyorBeltArt1 1_0
+      name: MainMenuScreenDB_0
       rect:
         serializedVersion: 2
-        x: 158
+        x: 0
         y: 0
-        width: 242
-        height: 100
+        width: 1924
+        height: 1084
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 115, y: 0, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acfcc1f619c21ad20800000000000000
-      internalID: 3287958206103211978
+      spriteID: 6943f5f01e3465110800000000000000
+      internalID: 1249260580546491542
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ConveyorBeltArt1 1_0: 3287958206103211978
+      MainMenuScreenDB_0: 1249260580546491542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
