@@ -5,7 +5,7 @@ using System.Collections;
 public class Timerhand : MonoBehaviour
 {
     public bool cardGameResult = false; // Placeholder, set this based on actual game logic
-    public TextMeshPro timerText;
+    public TextMeshProUGUI timerText;
     public float countdownFrom = 300f;
     private float timeRemaining;
     private bool isRunning = true;
@@ -60,7 +60,7 @@ public class Timerhand : MonoBehaviour
 
         int minutes = (int)(timeRemaining / 60);
         int seconds = (int)(timeRemaining % 60);
-
+  
         timerText.text = string.Format("{0}:{1:D2}", minutes, seconds);
 
         if (seconds == 05 && !hasAnimatedThisMinute && !isAnimating)

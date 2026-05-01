@@ -100,10 +100,7 @@ public class SolitiareManager : MonoBehaviour
             clubsOrdered = true;
             Completion1.SetActive(true);
         }
-        else
-        {
-            Completion1.SetActive(false);
-        }
+        
 
         //Check Spade
         if (performCheck(changeCurrentCards(solitaireZone2), "Spade"))
@@ -112,10 +109,7 @@ public class SolitiareManager : MonoBehaviour
             spadesOrdered = true;
             Completion2.SetActive(true);
         }
-        else
-        {
-            Completion2.SetActive(false);
-        }
+       
 
         //Check Hearts
         if (performCheck(changeCurrentCards(solitaireZone3), "Hearts"))
@@ -124,10 +118,7 @@ public class SolitiareManager : MonoBehaviour
             heartsOrdered = true;
             Completion3.SetActive(true);
         }
-        else
-        {
-            Completion3.SetActive(false);
-        }
+       
 
         //Check Diamonds
         if (performCheck(changeCurrentCards(solitaireZone4), "Diamonds"))
@@ -136,10 +127,7 @@ public class SolitiareManager : MonoBehaviour
             diamondsOrdered = true;
             Completion4.SetActive(true);
         }
-        else
-        {
-            Completion4.SetActive(false);
-        }
+      
 
     }
 
@@ -171,7 +159,7 @@ public class SolitiareManager : MonoBehaviour
 
             if (card.Suit != suit)
             {
-                //Debug.Log("Incorrect suit");
+                Debug.Log("Incorrect suit");
                 break;
             }
             else
