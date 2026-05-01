@@ -20,9 +20,16 @@ public class SolitiareManager : MonoBehaviour
     [SerializeField] SolitaireCardZone solitaireZone3;
     [SerializeField] SolitaireCardZone solitaireZone4;
 
+    [SerializeField] GameObject Completion1;
+    [SerializeField] GameObject Completion2;
+    [SerializeField] GameObject Completion3;
+    [SerializeField] GameObject Completion4;
+
+
     [Tooltip("Card model to use for cards")]
     [SerializeField] SolitaireCardModel[] cards; // Array that contains all of the cards; Will add the entire 52 deck later
 
+    [Header("--------------Debug----------------")]
     [Tooltip("force win by checking the box")]
     [SerializeField] public bool clubsOrdered;
     [SerializeField] public bool spadesOrdered;
@@ -91,6 +98,11 @@ public class SolitiareManager : MonoBehaviour
         {
             Debug.Log("Clubs is ordered");
             clubsOrdered = true;
+            Completion1.SetActive(true);
+        }
+        else
+        {
+            Completion1.SetActive(false);
         }
 
         //Check Spade
@@ -98,6 +110,11 @@ public class SolitiareManager : MonoBehaviour
         {
             Debug.Log("Spade is ordered");
             spadesOrdered = true;
+            Completion2.SetActive(true);
+        }
+        else
+        {
+            Completion2.SetActive(false);
         }
 
         //Check Hearts
@@ -105,6 +122,11 @@ public class SolitiareManager : MonoBehaviour
         {
             Debug.Log("Hearts is ordered");
             heartsOrdered = true;
+            Completion3.SetActive(true);
+        }
+        else
+        {
+            Completion3.SetActive(false);
         }
 
         //Check Diamonds
@@ -112,6 +134,11 @@ public class SolitiareManager : MonoBehaviour
         {
             Debug.Log("Diamonds is ordered");
             diamondsOrdered = true;
+            Completion4.SetActive(true);
+        }
+        else
+        {
+            Completion4.SetActive(false);
         }
 
     }
