@@ -1546,15 +1546,15 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: d3a51eb1b42567b4aa5eea7cc413e5d3, type: 3}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: 20e0ba00d9a7a9b409db27b44dfc49fa, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
   cardGameResult: 0
   timerText: {fileID: 1032997868}
-  countdownFrom: 300
+  countdownFrom: 10
   clockTick: {fileID: 1032997866}
   clockFinish: {fileID: 156281386}
   Pointer: {fileID: 156281385}
