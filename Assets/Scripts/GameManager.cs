@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
 
+
+
     private int EffectiveMaxStrikes => strikeImages != null && strikeImages.Length > 0
         ? Mathf.Min(maxStrikes, strikeImages.Length)
         : maxStrikes;
@@ -39,6 +41,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(strikeSound1);
+        DontDestroyOnLoad(strikeSound2);
+        DontDestroyOnLoad(strikeSound3);
     }
 
     void Start()
@@ -154,6 +160,9 @@ public class GameManager : MonoBehaviour
         // TODO: Show game over UI, reload scene, or stop gameplay
     }
 
-    public float GetMoney() => moneyCount;
+    public float GetMoney()
+    {
+        return moneyCount;
+    }
     public int GetStrikes() => strikeCount;
 }

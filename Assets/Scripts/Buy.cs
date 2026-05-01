@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class Buy : MonoBehaviour
 {
     public float money = 10f;
-    public float price = 5f;
+    public float price = 10.03f;
     public TextMeshPro buyText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +16,15 @@ public class Buy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameManager.Instance != null)
+        {
+            money = GameManager.Instance.GetMoney();
+            //Debug.Log(money);
+        }
+        else
+        {
+            Debug.LogWarning("GameManager.Instance is missing, cannot update strikes or money.");
+        }
     }
 
     private void OnTriggerEnter(Collider other)

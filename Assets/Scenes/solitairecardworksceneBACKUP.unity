@@ -2226,7 +2226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
   cardGameResult: 0
   timerText: {fileID: 1032997868}
-  countdownFrom: 300
+  countdownFrom: 1
   clockTick: {fileID: 1032997866}
   clockFinish: {fileID: 156281386}
   boss_warning: {fileID: 630772528}
