@@ -24,6 +24,8 @@ public class SolitiareManager : MonoBehaviour
     [SerializeField] GameObject Completion2;
     [SerializeField] GameObject Completion3;
     [SerializeField] GameObject Completion4;
+    [Tooltip("cutscene animator")]
+    [SerializeField] Animator animator;
 
 
     [Tooltip("Card model to use for cards")]
@@ -79,8 +81,6 @@ public class SolitiareManager : MonoBehaviour
         checkZones();
     }
 
-
-
     private int getRandomNumber(int min, int max)
     {
         return Random.Range(min, max);
@@ -135,10 +135,15 @@ public class SolitiareManager : MonoBehaviour
     {
         if (clubsOrdered && spadesOrdered && heartsOrdered && diamondsOrdered)
         {
+            winAnim();
             return true;
         }
 
         return false;
+    }
+    private void winAnim()
+    {
+        animator.SetTrigger("PlayAnim");
     }
 
     private bool performCheck(List<SolitaireCardModel> deck, string suit)

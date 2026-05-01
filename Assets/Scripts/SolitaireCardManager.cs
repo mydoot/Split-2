@@ -1,6 +1,8 @@
 using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
+using DG.Tweening;
+using Demo;
 
 public class SolitaireCardManager : CardEase.CardManager<SolitaireCardModel>
 {
@@ -34,6 +36,12 @@ public class SolitaireCardManager : CardEase.CardManager<SolitaireCardModel>
     {
         CardEase.EventManager<SolitaireCardModel, SolitaireCardManager>.CARD_PICKED.Invoke(this);
         this.cardImage.sprite = model.image;
+        this.transform.DOScale(1.15f, 0.15f);
+    }
+    public override void CardDropped()
+    {
+        CardEase.EventManager<SolitaireCardModel, SolitaireCardManager>.CARD_DROOPED.Invoke(this);
+        this.transform.DOScale(1f, 0.15f);
     }
 
     public SolitaireCardModel getModel()
