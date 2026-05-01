@@ -20,9 +20,16 @@ public class SolitiareManager : MonoBehaviour
     [SerializeField] SolitaireCardZone solitaireZone3;
     [SerializeField] SolitaireCardZone solitaireZone4;
 
+    [SerializeField] GameObject Completion1;
+    [SerializeField] GameObject Completion2;
+    [SerializeField] GameObject Completion3;
+    [SerializeField] GameObject Completion4;
+
+
     [Tooltip("Card model to use for cards")]
     [SerializeField] SolitaireCardModel[] cards; // Array that contains all of the cards; Will add the entire 52 deck later
 
+    [Header("--------------Debug----------------")]
     [Tooltip("force win by checking the box")]
     [SerializeField] public bool clubsOrdered;
     [SerializeField] public bool spadesOrdered;
@@ -91,28 +98,36 @@ public class SolitiareManager : MonoBehaviour
         {
             Debug.Log("Clubs is ordered");
             clubsOrdered = true;
+            Completion1.SetActive(true);
         }
+        
 
         //Check Spade
         if (performCheck(changeCurrentCards(solitaireZone2), "Spade"))
         {
             Debug.Log("Spade is ordered");
             spadesOrdered = true;
+            Completion2.SetActive(true);
         }
+       
 
         //Check Hearts
         if (performCheck(changeCurrentCards(solitaireZone3), "Hearts"))
         {
             Debug.Log("Hearts is ordered");
             heartsOrdered = true;
+            Completion3.SetActive(true);
         }
+       
 
         //Check Diamonds
         if (performCheck(changeCurrentCards(solitaireZone4), "Diamonds"))
         {
             Debug.Log("Diamonds is ordered");
             diamondsOrdered = true;
+            Completion4.SetActive(true);
         }
+      
 
     }
 
@@ -144,7 +159,7 @@ public class SolitiareManager : MonoBehaviour
 
             if (card.Suit != suit)
             {
-                //Debug.Log("Incorrect suit");
+                Debug.Log("Incorrect suit");
                 break;
             }
             else
