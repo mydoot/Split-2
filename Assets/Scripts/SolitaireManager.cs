@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
-using DG.Tweening;
 using Demo;
-using UnityEngine.UI;
 
 
 public class SolitiareManager : MonoBehaviour
@@ -23,60 +21,29 @@ public class SolitiareManager : MonoBehaviour
     [Tooltip("Card model to use for cards")]
     [SerializeField] SolitaireCardModel[] cards; // Array that contains all of the cards; Will add the entire 52 deck later
 
-    [Tooltip("force win by checking the box")]
-    [SerializeField] public bool clubsOrdered;
-    [SerializeField] public bool spadesOrdered;
-    [SerializeField] public bool heartsOrdered;
-    [SerializeField] public bool diamondsOrdered;
 
     // --------------------------MONO methods------------------------
 
     void Start()
     {
-        //DOTween.init();
-
+        // On game start and select one random card from cards[] array 
         SolitaireCardModel[] randomizeCards = cards.OrderBy(x => UnityEngine.Random.value).ToArray();
 
         List<SolitaireCardModel> cardDeck = randomizeCards.ToList();
 
         // cardZone adds a group and also adds a card into said group
-
-        // Used AI belows
-        int i = 0;
-
-        while (i < cardDeck.Count)
-        {
-            // Random.Range is max exclusive when using ints
-            int randomGroupSize = Random.Range(1, 4);
-
-            int cardsToGrab = Mathf.Min(randomGroupSize, cardDeck.Count - i);
-
-            List<SolitaireCardModel> newGroup = cardDeck.GetRange(i, cardsToGrab);
-            cardZone.AddGroup(newGroup);
-
-            i += cardsToGrab;
-        }
-
-        cardZone.transform.DOMoveX(50, 10).From().OnComplete(() => cardZone.startConveyor());
-
-
+        cardZone.AddGroup(cardDeck);
         cardZone.RefreshCardZone();
 
 
-    }
 
-    // --------------------------HELPER METHODS------------------------
+        // --------------------------HELPER METHODS------------------------
+
+    }
 
     void Update()
     {
         checkZones();
-    }
-
-
-
-    private int getRandomNumber(int min, int max)
-    {
-        return Random.Range(min, max);
     }
 
     // Possibly create a checkZones() function and have it update per frame
@@ -90,40 +57,25 @@ public class SolitiareManager : MonoBehaviour
         if (performCheck(changeCurrentCards(solitaireZone1), "Club"))
         {
             Debug.Log("Clubs is ordered");
-            clubsOrdered = true;
         }
 
         //Check Spade
-        if (performCheck(changeCurrentCards(solitaireZone2), "Spade"))
-        {
+        if (performCheck(changeCurrentCards(solitaireZone2), "Spade")){
             Debug.Log("Spade is ordered");
-            spadesOrdered = true;
         }
 
         //Check Hearts
         if (performCheck(changeCurrentCards(solitaireZone3), "Hearts"))
         {
             Debug.Log("Hearts is ordered");
-            heartsOrdered = true;
         }
 
         //Check Diamonds
         if (performCheck(changeCurrentCards(solitaireZone4), "Diamonds"))
         {
             Debug.Log("Diamonds is ordered");
-            diamondsOrdered = true;
         }
 
-    }
-
-    public bool checkWin()
-    {
-        if (clubsOrdered && spadesOrdered && heartsOrdered && diamondsOrdered)
-        {
-            return true;
-        }
-
-        return false;
     }
 
     private bool performCheck(List<SolitaireCardModel> deck, string suit)

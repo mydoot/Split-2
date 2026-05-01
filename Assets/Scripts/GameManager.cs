@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        AddStrike(2); // Start with 1 strike for testing
         UpdateUI();
     }
 

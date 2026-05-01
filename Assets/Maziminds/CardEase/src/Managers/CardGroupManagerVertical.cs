@@ -16,7 +16,6 @@ namespace CardEase
         [SerializeField] float maxSpacing = 99999f;
 
 
-
         [Header("--------------PRIVATE----------------")]
         [Tooltip("layout group used to adjust spacing")]
         VerticalLayoutGroup verticalLayoutGroup;

@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SolitaireCardZone
   cardGroupPrefab: {fileID: 6608077007195453498, guid: 6bac32d645a88f44e99665a9db4a3660, type: 3}
-  minSpacing: 500
-  maxSpacing: 500
+  minSpacing: 100
+  maxSpacing: 200
   shouldRemoveEmptyGroup: 0
   label: SolitaireCardZone
   Spade: 0
