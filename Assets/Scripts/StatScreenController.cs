@@ -2,6 +2,8 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using System.Data.SqlTypes;
 
 public class StatScreenController : MonoBehaviour
 {
@@ -62,6 +64,10 @@ public class StatScreenController : MonoBehaviour
     public void ShowStatsAndReturn()
     {
         if (hasShownStats) return;
+
+        resultText.transform.DOMoveY(1000, 2).From();
+        timeText.transform.DOMoveX(1000, 3).From();
+        moneyText.transform.DOMoveX(-1000, 3).From();
 
         hasShownStats = true;
         StartCoroutine(StatSequence());

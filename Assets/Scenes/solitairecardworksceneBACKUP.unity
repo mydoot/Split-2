@@ -1330,7 +1330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7a09b33a298534e8ed1f410da4e525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatScreenController
-  timerhand: {fileID: 1273572842}
+  timerhand: {fileID: 1032997867}
   solitaireManager: {fileID: 1442540816}
   statPanel: {fileID: 1244252386}
   resultText: {fileID: 1738844973}
@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timerhand
   cardGameResult: 0
   timerText: {fileID: 1032997868}
-  countdownFrom: 300
+  countdownFrom: 5
   clockTick: {fileID: 1032997866}
   clockFinish: {fileID: 156281386}
   Pointer: {fileID: 156281385}
@@ -4272,7 +4272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 791.47003
+      value: 791.4701
       objectReference: {fileID: 0}
     - target: {fileID: 3632199522760690759, guid: 9875a0764c0a9c440a47266a046dc997, type: 3}
       propertyPath: m_AnchoredPosition.y
