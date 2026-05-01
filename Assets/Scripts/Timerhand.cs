@@ -13,6 +13,10 @@ public class Timerhand : MonoBehaviour
 
     [SerializeField] AudioSource clockTick;
     [SerializeField] AudioSource clockFinish;
+    [SerializeField] AudioSource boss_warning;
+    [SerializeField] AudioSource boss_warning_2;
+    [SerializeField] AudioSource boss_warning_3;
+    [SerializeField] AudioSource boss_warning_4;
     [SerializeField] Transform Pointer;
 
     // Where the pointer lives off screen (set this in inspector to below/side of screen)
@@ -66,6 +70,26 @@ public class Timerhand : MonoBehaviour
         int seconds = (int)(timeRemaining % 60);
 
         timerText.text = string.Format("{0}:{1:D2}", minutes, seconds);
+
+        if (seconds == 5)
+        {
+            if (minutes == 4)
+            {
+                boss_warning.Play();
+            }
+            else if (minutes == 3)
+            {
+                boss_warning_2.Play();
+            }
+            else if (minutes == 2)
+            {
+                boss_warning_3.Play();
+            }
+            else if (minutes == 1)
+            {
+                boss_warning_4.Play();
+            }
+        }
         
         if (seconds == 05 && !hasAnimatedThisMinute && !isAnimating)
         {
