@@ -42,4 +42,26 @@ public class FirstPersonLook : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX);
     }
+
+    public void FocusOnPosition(Vector3 targetPosition)
+    {
+        Vector3 direction = targetPosition - playerCamera.position;
+
+        Vector3 flatDirection = new Vector3(direction.x, 0f, direction.z);
+
+        if (flatDirection.sqrMagnitude > 0.001f)
+        {
+            transform.rotation = Quaternion.LookRotation(flatDirection);
+        }
+
+        float flatDistance = flatDirection.magnitude;
+
+        xRotation = -Mathf.Atan2(direction.y, flatDistance) * Mathf.Rad2Deg;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        currentMouseDelta = Vector2.zero;
+        currentMouseDeltaVelocity = Vector2.zero;
+    }
 }
