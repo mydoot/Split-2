@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     private int strikeCount = 0;
     [SerializeField] private float moneyCount = -10.03f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource strikeSound1;
+    [SerializeField] private AudioSource strikeSound2;
+    [SerializeField] private AudioSource strikeSound3;
+
     public static GameManager Instance { get; private set; }
 
     private int EffectiveMaxStrikes => strikeImages != null && strikeImages.Length > 0
@@ -59,6 +64,20 @@ public class GameManager : MonoBehaviour
 
         strikeCount = Mathf.Clamp(strikeCount + amount, 0, EffectiveMaxStrikes);
         //SubtractMoney(moneyPenaltyPerStrike * amount);
+
+        if (strikeCount == 1)
+        {
+            Debug.Log("First strike! Be careful.");
+            strikeSound1.Play();
+        }
+        else if (strikeCount == 2)
+        {
+            strikeSound2.Play();
+        }
+        else if (strikeCount >= 3)
+        {
+            strikeSound3.Play();
+        }
 
         if (strikeCount >= EffectiveMaxStrikes)
         {
