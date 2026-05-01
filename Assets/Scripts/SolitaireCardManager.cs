@@ -1,4 +1,6 @@
 using UnityEngine.UI;
+using UnityEngine;
+using System.Linq;
 
 public class SolitaireCardManager : CardEase.CardManager<SolitaireCardModel>
 {
@@ -14,7 +16,7 @@ public class SolitaireCardManager : CardEase.CardManager<SolitaireCardModel>
     {
         if (cardModel.image != null)
         {
-            this.cardImage.sprite = cardModel.backsideImage;
+            this.cardImage.sprite = cardModel.image;
         }
         model = cardModel;
     }
@@ -22,12 +24,6 @@ public class SolitaireCardManager : CardEase.CardManager<SolitaireCardModel>
     public override void UpdateSelection(bool isSelected)
     {
         this.isSelected = isSelected;
-    }
-
-    public override void CardPicked()
-    {
-        CardEase.EventManager<SolitaireCardModel, SolitaireCardManager>.CARD_PICKED.Invoke(this);
-        this.cardImage.sprite = model.image;
     }
 
     public SolitaireCardModel getModel()
