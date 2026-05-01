@@ -100,6 +100,10 @@ public class SolitiareManager : MonoBehaviour
             clubsOrdered = true;
             Completion1.SetActive(true);
         }
+        else
+        {
+            Completion1.SetActive(false);
+        }
         
 
         //Check Spade
@@ -109,7 +113,11 @@ public class SolitiareManager : MonoBehaviour
             spadesOrdered = true;
             Completion2.SetActive(true);
         }
-       
+        else
+        {
+            Completion2.SetActive(false);
+        }
+
 
         //Check Hearts
         if (performCheck(changeCurrentCards(solitaireZone3), "Hearts"))
@@ -118,7 +126,10 @@ public class SolitiareManager : MonoBehaviour
             heartsOrdered = true;
             Completion3.SetActive(true);
         }
-       
+        else
+        {
+            Completion3.SetActive(false);
+        }
 
         //Check Diamonds
         if (performCheck(changeCurrentCards(solitaireZone4), "Diamonds"))
@@ -127,7 +138,11 @@ public class SolitiareManager : MonoBehaviour
             diamondsOrdered = true;
             Completion4.SetActive(true);
         }
-      
+        else
+        {
+            Completion4.SetActive(true);
+        }
+
 
     }
 
@@ -169,7 +184,7 @@ public class SolitiareManager : MonoBehaviour
             }
             else
             {
-                if (card.Rank == 1)
+                if (card.Rank == 13)
                 {
                     prevCard = card;
                     //immediately goes to the next card, we already know the first card should be 1
@@ -177,12 +192,12 @@ public class SolitiareManager : MonoBehaviour
                 }
                 else if (prevCard == null)
                 {
-                    //Debug.Log("first card is not 1");
+                    Debug.Log("first card is not KING");
                     break;
                 }
-                if (card.Rank != (prevCard.Rank + 1))
+                if (card.Rank != (prevCard.Rank - 1))
                 {
-                    //Debug.Log("rank is not in order");
+                    Debug.Log("rank is not in order");
                     break;
                 }
                 else
@@ -190,7 +205,7 @@ public class SolitiareManager : MonoBehaviour
                     prevCard = card;
                 }
 
-                if (card.Rank == 13)
+                if (card.Rank == 1)
                 {
                     //Debug.Log("deck is ordered");
                     return true;
