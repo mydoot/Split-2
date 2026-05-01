@@ -140,7 +140,7 @@ public class SolitiareManager : MonoBehaviour
         }
         else
         {
-            Completion4.SetActive(true);
+            Completion4.SetActive(false);
         }
 
 
