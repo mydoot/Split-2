@@ -65,9 +65,9 @@ public class StatScreenController : MonoBehaviour
     {
         if (hasShownStats) return;
 
-        resultText.transform.DOMoveY(1000, 2).From();
-        timeText.transform.DOMoveX(1000, 3).From();
-        moneyText.transform.DOMoveX(-1000, 3).From();
+        resultText.transform.DOMoveY(1000, 1).From();
+        timeText.transform.DOMoveX(1000, 1.5f).From();
+        moneyText.transform.DOMoveX(-1000, 1.5f).From();
 
         hasShownStats = true;
         StartCoroutine(StatSequence());
